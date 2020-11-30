@@ -84,6 +84,13 @@ public class App
         // you need to use "instanceof" and cast the properties array to a
         // PrivateProperty type
 
+        System.out.println("PART 6 = ID AND TAX : ");
+        System.out.println("ID : "+p1.getPropertyID()+" Tax: "+p1.calculateTax());
+        System.out.println("ID : "+pp3.getPropertyID()+" Tax: "+pp3.calculateTax());
+
+        System.out.println("\n\nQ4 - tests");
+        displayAllProperties(properties);
+
         System.out.println("DISPLAY PROP ID & TAX ");
         for (Property p : properties) {
             if (p instanceof PrivateProperty) {
@@ -92,8 +99,6 @@ public class App
                 System.out.print("Tax :"+pp.calculateTax()+"\n");
             }
         }
-
-        System.out.println("\n\nQ4 - tests");
 
     }
 
