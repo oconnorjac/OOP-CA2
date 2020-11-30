@@ -15,42 +15,58 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
-    private ArrayList<ArrayList<String>> facilities;
+    private ArrayList<String> facilities;
 
     /**
      * Constructor
-     * @param propertyID
-     * @param owner
-     * @param postcode
-     * @param sellingPrice
-     * @param area
-     * @param facilities
      */
-    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area, ArrayList<ArrayList<String>> facilities)
+    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area, ArrayList<String> facilities)
     {
         this.propertyID = propertyID;
         this.owner = owner;
         this.postcode = postcode;
         this.facilities = facilities;
-        this.sellingPrice = 0;
+        this.sellingPrice = sellingPrice;
+        this.area = area;
+    }
+    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
+    {
+        this.propertyID = propertyID;
+        this.owner = owner;
+        this.postcode = postcode;
+        this.sellingPrice = sellingPrice;
+        this.area = area;
+    }
+    public Property(int propertyID, String owner, String postcode, double area)
+    {
+        this.propertyID = propertyID;
+        this.owner = owner;
+        this.postcode = postcode;
         this.area = area;
     }
 
     /**
-     * Methods
+     * Public Methods
      */
-    private void addFacility(String facility){
-        this.getFacilities().add(facility);
+    public void addFacility(String facility){
+        this.facilities.add(facility);
     }
 
-
-    public ArrayList<ArrayList<String>> getFacilities() {
-        return facilities;
+    public void removeFacility(String facility){
+        //for(ArrayList<String> f : facilities){
+            //if(f.contains(facility)){
+                //facilities.remove(f);
+           // }
+       // }
     }
+
 
     /**
      * Getters & Setters
      */
+    public ArrayList<String> getFacilities() {
+        return facilities;
+    }
 
     public int getPropertyID()
     {

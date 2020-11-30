@@ -20,17 +20,23 @@ public class App
     public void start()
     {
         System.out.println("Q1 - some simple tests");
-        //ArrayList<String> facilities = new ArrayList<String>();
-        //facilities.add("mains water");
-        //facilities.add("electricity");
-        //facilities.add("freehold");
-        //facilities.add("private access");
+        ArrayList<String> facilities = new ArrayList<String>();
+
 
         Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, 130, facilities);
         System.out.println("Property p1 details:");
         System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea());
 
-        p1.getFacilities().addFacility("electricity");
+        Property p2 = new Property(2,"John Smith","A4RD7T7",265000,250,facilities);
+
+        // part 3 and 4 tests
+        p1.addFacility("electricity");
+        p1.addFacility("mains water");
+        p2.addFacility("electricity");
+        p2.addFacility("freehold");
+        p2.addFacility("private access");
+        System.out.println("p1s facilities: "+p1.getFacilities());
+        System.out.println("p2s facilities: "+p2.getFacilities());
 
         System.out.println("Q2 - tests");
 
