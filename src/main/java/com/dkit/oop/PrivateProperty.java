@@ -38,6 +38,22 @@ public class PrivateProperty extends Property{
         this.type = type;
     }
 
+    public int getNumBeds() {
+        return numBeds;
+    }
+
+    public void setNumBeds(int numBeds) {
+        this.numBeds = numBeds;
+    }
+
+    public PropertyType getType() {
+        return type;
+    }
+
+    public void setType(PropertyType type) {
+        this.type = type;
+    }
+
     /**
      * Methods
      */

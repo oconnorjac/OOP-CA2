@@ -75,6 +75,10 @@ public class App
         PrivateProperty pp3 = new PrivateProperty(10, "Joe Bloggs", "A944B8G", 310000, 190, facilities,2,PropertyType.DETACHED);
         properties.add(pp2);
         properties.add(pp3);
+        PrivateProperty pp4 = new PrivateProperty(11, "Bob Black", "A9THB8G", 275000, 308, facilities,4,PropertyType.DETACHED);
+        PrivateProperty pp5 = new PrivateProperty(12, "Jane Brown", "YDFB8G", 190000, 280, facilities,5,PropertyType.DETACHED);
+        properties.add(pp4);
+        properties.add(pp5);
 
         //5.	In a code comment, explain how equals() (based only on owner
         // and propertyID) and hashCode() should be dealt with in this
@@ -84,19 +88,32 @@ public class App
         // you need to use "instanceof" and cast the properties array to a
         // PrivateProperty type
 
-        System.out.println("PART 6 = ID AND TAX : ");
+        System.out.println("\nPART 6 = ID AND TAX : ");
         System.out.println("ID : "+p1.getPropertyID()+" Tax: "+p1.calculateTax());
         System.out.println("ID : "+pp3.getPropertyID()+" Tax: "+pp3.calculateTax());
 
         System.out.println("\n\nQ4 - tests");
         displayAllProperties(properties);
 
-        System.out.println("DISPLAY PROP ID & TAX ");
+        System.out.println("\n\nDISPLAY PROP ID & TAX ");
         for (Property p : properties) {
-            if (p instanceof PrivateProperty) {
-                System.out.print("Property ID "+p.getPropertyID() + "\t");
+            System.out.print("Property ID "+p.getPropertyID() + "\t");
+            System.out.format("Tax :"+p.calculateTax()+"\n");
+            //if (p instanceof PrivateProperty) {
+           //     System.out.print("Property ID "+p.getPropertyID() + "\t");
+            //    PrivateProperty pp = (PrivateProperty) p;
+            //    System.out.format("Tax :"+pp.calculateTax()+"\n");
+           // }
+        }
+
+        System.out.println("\n\n DISPLAY PROP ID, SELLING PRICE, NUMROOMS FOR DETACHED");
+        for(Property p : properties){
+
+            if (p instanceof PrivateProperty)
+                if(((PrivateProperty) p).getType()==PropertyType.DETACHED)
+                System.out.println("ID: "+p.getPropertyID()+ " Price: "+p.getSellingPrice());
                 PrivateProperty pp = (PrivateProperty) p;
-                System.out.print("Tax :"+pp.calculateTax()+"\n");
+                System.out.format("Rooms :"+pp.getNumBeds());
             }
         }
 
