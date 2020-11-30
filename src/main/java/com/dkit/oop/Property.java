@@ -7,6 +7,7 @@
 package com.dkit.oop;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class Property
 {
@@ -118,4 +119,29 @@ public class Property
         this.area = area;
     }
 
+    @Override
+    public String toString() {
+        return "\n"+ getClass().getSimpleName() + "{" +
+                "propertyID=" + propertyID +
+                ", owner='" + owner + '\'' +
+                ", postcode='" + postcode + '\'' +
+                ", sellingPrice=" + sellingPrice +
+                ", area=" + area +
+                ", facilities=" + facilities +
+                '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (!(o instanceof Property)) return false;
+        Property property = (Property) o;
+        return getPropertyID() == property.getPropertyID() &&
+                Objects.equals(getOwner(), property.getOwner());
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPropertyID(), getOwner());
+    }
 }
