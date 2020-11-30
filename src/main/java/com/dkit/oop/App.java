@@ -1,5 +1,7 @@
 package com.dkit.oop;
 
+import java.util.ArrayList;
+
 /**
  * OOP - CA#2 - Nov 2020
  * Your Name: JACQUELINE O'CONNOR
@@ -18,11 +20,17 @@ public class App
     public void start()
     {
         System.out.println("Q1 - some simple tests");
+        //ArrayList<String> facilities = new ArrayList<String>();
+        //facilities.add("mains water");
+        //facilities.add("electricity");
+        //facilities.add("freehold");
+        //facilities.add("private access");
 
-        Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, 130);
+        Property p1 = new Property(1, "Mary Smith", "A91AB12", 255000, 130, facilities);
         System.out.println("Property p1 details:");
         System.out.println(p1.getPropertyID() + " : " + p1.getOwner() + " : " + p1.getPostcode() + " : " + p1.getSellingPrice() + " : " + p1.getArea());
 
+        p1.getFacilities().addFacility("electricity");
 
         System.out.println("Q2 - tests");
 

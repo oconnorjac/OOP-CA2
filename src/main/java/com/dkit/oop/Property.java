@@ -7,7 +7,6 @@
 package com.dkit.oop;
 
 import java.util.ArrayList;
-import java.util.Objects;
 
 public class Property
 {
@@ -16,15 +15,42 @@ public class Property
     private String postcode;
     private double sellingPrice;
     private double area;
+    private ArrayList<ArrayList<String>> facilities;
 
-    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area)
+    /**
+     * Constructor
+     * @param propertyID
+     * @param owner
+     * @param postcode
+     * @param sellingPrice
+     * @param area
+     * @param facilities
+     */
+    public Property(int propertyID, String owner, String postcode, double sellingPrice, double area, ArrayList<ArrayList<String>> facilities)
     {
         this.propertyID = propertyID;
         this.owner = owner;
         this.postcode = postcode;
-        this.sellingPrice = sellingPrice;
+        this.facilities = facilities;
+        this.sellingPrice = 0;
         this.area = area;
     }
+
+    /**
+     * Methods
+     */
+    private void addFacility(String facility){
+        this.getFacilities().add(facility);
+    }
+
+
+    public ArrayList<ArrayList<String>> getFacilities() {
+        return facilities;
+    }
+
+    /**
+     * Getters & Setters
+     */
 
     public int getPropertyID()
     {
