@@ -42,7 +42,7 @@ public class PrivateProperty extends Property{
      * Methods
      */
     public double calculateTax(){
-        return (25.00 * this.numBeds) + (super.getArea() * this.numBeds);
+        return (25.00 * this.numBeds) + (super.getArea() * 2.2);
     }
 
     @Override
