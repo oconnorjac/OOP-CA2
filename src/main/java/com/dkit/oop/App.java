@@ -2,9 +2,9 @@ package com.dkit.oop;
 
 /**
  * OOP - CA#2 - Nov 2020
- * Your Name:
+ * Your Name: JACQUELINE O'CONNOR
  * <p>
- * Your GitHub link:
+ * Your GitHub link: https://github.com/oconnorjac/OOP-CA2
  */
 public class App
 {
