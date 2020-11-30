@@ -62,6 +62,10 @@ public class App
         System.out.println("DISPLAY PROPERTIES ");
         displayAllProperties(properties);
 
+        System.out.println("\nSELLING ABOVE");
+        ArrayList<Property> sellingAbove = getPropertiesPriceAbove(properties,260000);
+        displayAllProperties(sellingAbove);
+
 
         System.out.println("Q3 - tests");
 
@@ -76,6 +80,18 @@ public class App
             System.out.print(property);
         }
 
+    }
+
+    public ArrayList<Property> getPropertiesPriceAbove(ArrayList<Property> p,double boundary){
+
+        ArrayList<Property> sellingAbove = new ArrayList<>();
+
+        for(Property prop : p ){
+            if(prop.getSellingPrice()>boundary) {
+                sellingAbove.add(prop);
+            }
+        }
+        return sellingAbove;
     }
 }
 
