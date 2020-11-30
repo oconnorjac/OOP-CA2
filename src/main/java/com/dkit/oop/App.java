@@ -67,10 +67,33 @@ public class App
         displayAllProperties(sellingAbove);
 
 
-        System.out.println("Q3 - tests");
+        System.out.println("\n\nQ3 - tests");
+        PrivateProperty pp1 = new PrivateProperty(8, "Joe Smith", "A98AB82", 285000, 130, facilities,5,PropertyType.APARTMENT);
+        System.out.println(pp1);
+        properties.add(pp1);
+        PrivateProperty pp2 = new PrivateProperty(9, "Mike Smith", "A98TG82", 250000, 420, facilities,3,PropertyType.SEMI_D);
+        PrivateProperty pp3 = new PrivateProperty(10, "Joe Bloggs", "A944B8G", 310000, 190, facilities,2,PropertyType.DETACHED);
+        properties.add(pp2);
+        properties.add(pp3);
 
+        //5.	In a code comment, explain how equals() (based only on owner
+        // and propertyID) and hashCode() should be dealt with in this
+        // PrivateProperty class ........
+        //
+        // ANSWER: Due to polymorphism, in order to check whether they're equal,
+        // you need to use "instanceof" and cast the properties array to a
+        // PrivateProperty type
 
-        System.out.println("Q4 - tests");
+        System.out.println("DISPLAY PROP ID & TAX ");
+        for (Property p : properties) {
+            if (p instanceof PrivateProperty) {
+                System.out.print("Property ID "+p.getPropertyID() + "\t");
+                PrivateProperty pp = (PrivateProperty) p;
+                System.out.print("Tax :"+pp.calculateTax()+"\n");
+            }
+        }
+
+        System.out.println("\n\nQ4 - tests");
 
     }
 
