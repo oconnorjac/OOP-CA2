@@ -49,7 +49,18 @@ public class App
         System.out.println("p3==p5: "+(p3==p5));
         System.out.println("p3.equals(p5)"+p3.equals(p5));
 
+        //part 6
+        double tax = p1.calculateTax();
+        System.out.println("tax on p1: "+tax);
+
         System.out.println("Q2 - tests");
+        ArrayList<Property> properties = new ArrayList<>();
+        properties.add(p1);
+        properties.add(p2);
+        properties.add(p3);
+
+        System.out.println("DISPLAY PROPERTIES ");
+        displayAllProperties(properties);
 
 
         System.out.println("Q3 - tests");
@@ -57,6 +68,13 @@ public class App
 
         System.out.println("Q4 - tests");
 
+    }
+
+    public static void displayAllProperties(ArrayList<Property> p){
+
+        for(Property property : p){
+            System.out.print(property);
+        }
 
     }
 }

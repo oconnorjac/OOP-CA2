@@ -61,6 +61,10 @@ public class Property
        // }
     }
 
+    public double calculateTax(){
+        return (this.area * 2.2) + 15.00;
+    }
+
 
     /**
      * Getters & Setters
