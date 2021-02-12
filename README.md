@@ -2,4 +2,6 @@
 
 Class Test 
 
-Properties
+(Array List of House Properties)
+
+93%
